@@ -3,30 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Photo Sharing App - Consumer</title>
+  <title>SnapStream - Discover Photos</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link href="CSS/consumerUser.css" rel="stylesheet">
 </head>
 <body>
   <div class="main-layout">
-    <!-- Sidebar -->
     <aside class="sidebar">
-      <h1 id="user">📸 Photo App</h1>
+      <h1 id="user">📸 SnapStream</h1>
       <div class="search-bar">
-        <input type="text" id="searchInput" placeholder="Search photos..."/>
-        <button id="searchBtn">Search</button>
+        <input type="text" id="searchInput" placeholder="Search by title, caption, user..."/>
+        <button id="searchBtn">🔍</button>
       </div>
       <button class="logout-btn" id="logoutBtn">Logout</button>
     </aside>
 
-    <!-- Content -->
     <div class="content">
-      <h2>Browse Photos</h2>
+      <h2>Explore the Stream</h2>
       <div id="photos" class="photo-list"></div>
     </div>
   </div>
 
-  <!-- Photo Modal -->
+  <!-- Modal -->
   <div id="photoModal" class="modal">
     <div class="modal-content">
       <div class="modal-header">
@@ -35,10 +33,8 @@
       </div>
       <div class="modal-body">
         <img id="modalImage" class="modal-photo" src="" alt=""/>
-        <div class="photo-meta">
-          <p id="modalCaption"></p>
-          <p id="modalLocation"></p>
-        </div>
+        <p id="modalCaption" class="photo-meta"></p>
+        <p id="modalLocation" class="photo-meta"></p>
 
         <div class="rating-section">
           <h4>Rate this photo</h4>
@@ -50,15 +46,13 @@
             <span class="star" data-value="5">★</span>
           </div>
           <button id="submitRatingBtn" class="btn">Submit Rating</button>
+          <p id="photoAverageRating">Average Rating: Loading...</p>
         </div>
-        <p id="photoAverageRating">Average Rating: Loading...</p>
 
         <div class="comments-section">
           <h4>Comments</h4>
           <div id="commentsList"></div>
-          <div class="form-group">
-            <textarea id="commentText" class="form-control" placeholder="Write a comment..." rows="3"></textarea>
-          </div>
+          <textarea id="commentText" class="form-control" placeholder="Leave a comment..." rows="3"></textarea>
           <button id="submitCommentBtn" class="btn">Post Comment</button>
         </div>
       </div>
@@ -71,15 +65,13 @@
       window.location.href = 'index.html';
     });
 
-    const modal = document.getElementById('photoModal');
-    const closeModalBtn = document.getElementById('closeModalBtn');
-    closeModalBtn.addEventListener('click', () => {
-      modal.style.display = 'none';
+    document.getElementById('closeModalBtn').addEventListener('click', () => {
+      document.getElementById('photoModal').style.display = 'none';
     });
 
     window.addEventListener('click', (event) => {
-      if (event.target === modal) {
-        modal.style.display = 'none';
+      if (event.target === document.getElementById('photoModal')) {
+        document.getElementById('photoModal').style.display = 'none';
       }
     });
   </script>
