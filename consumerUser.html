@@ -2,24 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SnapStream - Discover Photos</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link href="CSS/consumerUser.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SnapStream - Discover Moments</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="CSS/consumerUser.css" rel="stylesheet" />
 </head>
 <body>
   <div class="main-layout">
+    <!-- Sidebar -->
     <aside class="sidebar">
-      <h1 id="user">📸 SnapStream</h1>
+      <h1 id="user">Welcome to SnapStream ✨</h1>
       <div class="search-bar">
-        <input type="text" id="searchInput" placeholder="Search by title, caption, user..."/>
-        <button id="searchBtn">🔍</button>
+        <input type="text" id="searchInput" placeholder="Search moments, places or people..."/>
+        <button id="searchBtn">Go</button>
       </div>
-      <button class="logout-btn" id="logoutBtn">Logout</button>
+      <button class="logout-btn" id="logoutBtn">Sign Out</button>
     </aside>
 
+    <!-- Content -->
     <div class="content">
-      <h2>Explore the Stream</h2>
+      <h2>Discover New Moments</h2>
       <div id="photos" class="photo-list"></div>
     </div>
   </div>
@@ -33,11 +35,13 @@
       </div>
       <div class="modal-body">
         <img id="modalImage" class="modal-photo" src="" alt=""/>
-        <p id="modalCaption" class="photo-meta"></p>
-        <p id="modalLocation" class="photo-meta"></p>
+        <div class="photo-meta">
+          <p id="modalCaption"></p>
+          <p id="modalLocation"></p>
+        </div>
 
         <div class="rating-section">
-          <h4>Rate this photo</h4>
+          <h4>Leave a Rating</h4>
           <div class="star-rating" id="starRating">
             <span class="star" data-value="1">★</span>
             <span class="star" data-value="2">★</span>
@@ -45,14 +49,17 @@
             <span class="star" data-value="4">★</span>
             <span class="star" data-value="5">★</span>
           </div>
-          <button id="submitRatingBtn" class="btn">Submit Rating</button>
-          <p id="photoAverageRating">Average Rating: Loading...</p>
+          <button id="submitRatingBtn" class="btn">Send Rating</button>
         </div>
+
+        <p id="photoAverageRating">Average Rating: Loading...</p>
 
         <div class="comments-section">
           <h4>Comments</h4>
           <div id="commentsList"></div>
-          <textarea id="commentText" class="form-control" placeholder="Leave a comment..." rows="3"></textarea>
+          <div class="form-group">
+            <textarea id="commentText" class="form-control" placeholder="Say something nice..." rows="3"></textarea>
+          </div>
           <button id="submitCommentBtn" class="btn">Post Comment</button>
         </div>
       </div>
@@ -65,14 +72,12 @@
       window.location.href = 'index.html';
     });
 
+    const modal = document.getElementById('photoModal');
     document.getElementById('closeModalBtn').addEventListener('click', () => {
-      document.getElementById('photoModal').style.display = 'none';
+      modal.style.display = 'none';
     });
-
     window.addEventListener('click', (event) => {
-      if (event.target === document.getElementById('photoModal')) {
-        document.getElementById('photoModal').style.display = 'none';
-      }
+      if (event.target === modal) modal.style.display = 'none';
     });
   </script>
 
