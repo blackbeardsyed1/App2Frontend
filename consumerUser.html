@@ -1,99 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Photo Sharing App - Consumer</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link href="CSS/consumerUser.css" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1 id="user">📸 Photo Sharing App - Consumer</h1>
-    <button class="logout-btn" id="logoutBtn">Logout</button>
-  </header>
-
-  <div class="container">
-    <div class="dashboard">
-      <div class="dashboard-header">
-        <h2>Browse Photos</h2>
-        <div class="search-bar">
-          <input type="text" id="searchInput" placeholder="Search photos..."/>
-          <button id="searchBtn">Search</button>
-        </div>
+  <div class="main-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h1 id="user">📸 Photo App</h1>
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search photos..."/>
+        <button id="searchBtn">Search</button>
       </div>
-      <div id="photos" class="photo-grid"></div>
+      <button class="logout-btn" id="logoutBtn">Logout</button>
+    </aside>
+
+    <!-- Content -->
+    <div class="content">
+      <h2>Browse Photos</h2>
+      <div id="photos" class="photo-list"></div>
     </div>
+  </div>
 
-    <!-- Photo Modal -->
-    <div id="photoModal" class="modal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 id="modalTitle"></h3>
-          <button class="close-modal" id="closeModalBtn">&times;</button>
+  <!-- Photo Modal -->
+  <div id="photoModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modalTitle"></h3>
+        <button class="close-modal" id="closeModalBtn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <img id="modalImage" class="modal-photo" src="" alt=""/>
+        <div class="photo-meta">
+          <p id="modalCaption"></p>
+          <p id="modalLocation"></p>
         </div>
-        <div class="modal-body">
-          <img id="modalImage" class="modal-photo" src="" alt=""/>
-          <div class="photo-meta">
-            <p id="modalCaption"></p>
-            <p id="modalLocation"></p>
-          </div>
-          
-          <div class="rating-section">
-            <h4>Rate this photo</h4>
-            <div class="star-rating" id="starRating">
-              <span class="star" data-value="1">★</span>
-              <span class="star" data-value="2">★</span>
-              <span class="star" data-value="3">★</span>
-              <span class="star" data-value="4">★</span>
-              <span class="star" data-value="5">★</span>
-            </div>
-            <button id="submitRatingBtn" class="btn">Submit Rating</button>
-          </div>
-          <p id="photoAverageRating">Average Rating: Loading...</p>
 
-          
-          <div class="comments-section">
-            <h4>Comments</h4>
-            <div id="commentsList"></div>
-            <div class="form-group">
-              <textarea id="commentText" class="form-control" placeholder="Write a comment..." rows="3"></textarea>
-            </div>
-            <button id="submitCommentBtn" class="btn">Post Comment</button>
+        <div class="rating-section">
+          <h4>Rate this photo</h4>
+          <div class="star-rating" id="starRating">
+            <span class="star" data-value="1">★</span>
+            <span class="star" data-value="2">★</span>
+            <span class="star" data-value="3">★</span>
+            <span class="star" data-value="4">★</span>
+            <span class="star" data-value="5">★</span>
           </div>
+          <button id="submitRatingBtn" class="btn">Submit Rating</button>
+        </div>
+        <p id="photoAverageRating">Average Rating: Loading...</p>
+
+        <div class="comments-section">
+          <h4>Comments</h4>
+          <div id="commentsList"></div>
+          <div class="form-group">
+            <textarea id="commentText" class="form-control" placeholder="Write a comment..." rows="3"></textarea>
+          </div>
+          <button id="submitCommentBtn" class="btn">Post Comment</button>
         </div>
       </div>
     </div>
   </div>
+
   <script>
-    // Ensure logout is available
     document.getElementById('logoutBtn').addEventListener('click', () => {
       localStorage.removeItem('token');
       window.location.href = 'index.html';
     });
-  </script>
-  <script>
-    // Logout functionality
-    document.getElementById('logoutBtn').addEventListener('click', () => {
-      localStorage.removeItem('token');
-      window.location.href = 'index.html';
-    });
-  
-    // Modal close functionality
+
     const modal = document.getElementById('photoModal');
     const closeModalBtn = document.getElementById('closeModalBtn');
-  
     closeModalBtn.addEventListener('click', () => {
       modal.style.display = 'none';
     });
-  
-    // Optional: close modal if user clicks outside modal-content
+
     window.addEventListener('click', (event) => {
       if (event.target === modal) {
         modal.style.display = 'none';
       }
     });
   </script>
+
   <script src="javascript/authentication.js" defer></script>
   <script src="javascript/consumerUser.js" defer></script>
 </body>
