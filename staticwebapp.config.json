@@ -7,22 +7,22 @@
       },
       {
         "route": "/consumer",
-        "serve": "/consumer.html",
+        "serve": "/consumerUser.html",
         "statusCode": 200
       },
       {
         "route": "/creator",
-        "serve": "/creator.html",
+        "serve": "/creatorUser.html",
         "statusCode": 200
       },
       {
-        "route": "/styles/*",
-        "serve": "/styles/*",
+        "route": "/CSS/*",
+        "serve": "/CSS/*",
         "statusCode": 200
       },
       {
-        "route": "/scripts/*",
-        "serve": "/scripts/*",
+        "route": "/javascript/*",
+        "serve": "/javascript/*",
         "statusCode": 200
       }
     ],
@@ -50,7 +50,7 @@
       ".js": "application/javascript"
     },
     "globalHeaders": {
-      "Content-Security-Policy": "default-src 'self'; connect-src 'self' https://photosapp-insta-gca8aafdbygffjbq.canadacentral-01.azurewebsites.net; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://*.blob.core.windows.net; font-src 'self' https://fonts.gstatic.com",
+      "Content-Security-Policy": "default-src 'self'; connect-src 'self' https://scalablesoftwarephotoapp-cbcmh4hcemhsg2bh.francecentral-01.azurewebsites.net; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://*.blob.core.windows.net; font-src 'self' https://fonts.gstatic.com",
       "X-Frame-Options": "DENY",
       "X-Content-Type-Options": "nosniff"
     }
