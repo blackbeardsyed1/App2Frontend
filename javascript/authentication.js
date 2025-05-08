@@ -1,7 +1,7 @@
 console.log("auth js loaded");
-const backend = "https://photosapp-insta-gca8aafdbygffjbq.canadacentral-01.azurewebsites.net";
+const backend = "https://scalablesoftwarephotoapp-cbcmh4hcemhsg2bh.francecentral-01.azurewebsites.net/";
 
-// Global functions
+// Global functionss
 window.showSignUp = function() {
   document.getElementById('loginSection').style.display = 'none';
   document.getElementById('signUpSection').style.display = 'flex';
@@ -21,7 +21,7 @@ window.signUp = function() {
     return;
   }
 
-  fetch(`${backend}/signup`, {
+  fetch(`${backend}/register`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ username, password })
@@ -46,7 +46,7 @@ window.login = function() {
   const username = document.getElementById('loginUsername').value;
   const password = document.getElementById('loginPassword').value;
 
-  fetch(`${backend}/login`, {
+  fetch(`${backend}/authenticate`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ username, password })

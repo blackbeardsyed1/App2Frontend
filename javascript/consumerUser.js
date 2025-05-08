@@ -1,5 +1,5 @@
 console.log("consumer.js loaded");
-const consumerBackend = "https://photosapp-insta-gca8aafdbygffjbq.canadacentral-01.azurewebsites.net";
+const consumerBackend = "https://scalablesoftwarephotoapp-cbcmh4hcemhsg2bh.francecentral-01.azurewebsites.net/";
 let selectedPhoto = null;
 let currentRating = 0;
 
@@ -57,7 +57,7 @@ function setupStarRating() {
 async function loadPhotos() {
   try {
     const token = localStorage.getItem('token');
-    const response = await fetch(`${consumerBackend}/photos`, {
+    const response = await fetch(`${consumerBackend}/media-items`, {
       headers: {
         'Authorization': `Bearer ${token}`
       }
@@ -114,7 +114,7 @@ function viewPhotoDetails(title, imageUrl, caption, location) {
   document.getElementById('modalTitle').textContent = title;
   document.getElementById('modalImage').src = imageUrl;
   document.getElementById('modalCaption').textContent = caption || '';
-  document.getElementById('modalLocation').textContent = location ? `📍 ${location}` : '';
+  document.getElementById('modalLocation').textContent = location ? `Location: ${location}` : '';
   
   // Load comments for this photo
   loadComments(title);
@@ -135,7 +135,7 @@ function closeModal() {
 async function loadComments(photoTitle) {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`${consumerBackend}/photos/${encodeURIComponent(photoTitle)}`, {
+      const response = await fetch(`${consumerBackend}/media-items/${encodeURIComponent(photoTitle)}`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -189,7 +189,7 @@ async function submitComment() {
   }
   
   try {
-    const response = await fetch(`${consumerBackend}/photos/${encodeURIComponent(selectedPhoto)}/comment`, {
+    const response = await fetch(`${consumerBackend}/media-items/${encodeURIComponent(selectedPhoto)}/comments`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -220,7 +220,7 @@ async function submitRating() {
   }
   
   try {
-    const response = await fetch(`${consumerBackend}/photos/${encodeURIComponent(selectedPhoto)}/rate`, {
+    const response = await fetch(`${consumerBackend}/media-items/${encodeURIComponent(selectedPhoto)}/ratings`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -250,7 +250,7 @@ async function searchPhotos() {
   }
   
   try {
-    const response = await fetch(`${consumerBackend}/photos/search?q=${encodeURIComponent(query)}`, {
+    const response = await fetch(`${consumerBackend}/media-items/search?q=${encodeURIComponent(query)}`, {
       headers: {
         'Authorization': `Bearer ${token}`
       }

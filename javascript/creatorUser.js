@@ -1,5 +1,5 @@
 console.log("creator.js loaded");
-const creatorBackend = "https://photosapp-insta-gca8aafdbygffjbq.canadacentral-01.azurewebsites.net";
+const creatorBackend = "https://scalablesoftwarephotoapp-cbcmh4hcemhsg2bh.francecentral-01.azurewebsites.net/";
 
 document.addEventListener('DOMContentLoaded', function() {
   const token = localStorage.getItem('token');
@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     return;
   }
 const username = getUsernameFromToken(token);
-document.getElementById('user').textContent = `Photo Sharing App - ${username}`;
+document.getElementById('user').textContent = `Instagram - ${username}`;
   loadUploadedPhotos();
   document.getElementById("uploadBtn").addEventListener("click", uploadPhoto);
 
@@ -42,7 +42,7 @@ function uploadPhoto() {
   formData.append("caption", caption);
   formData.append("location", location);
 
-  fetch(`${creatorBackend}/upload`, {
+  fetch(`${creatorBackend}/add-media`, {
     method: 'POST',
     headers: {
       'Authorization': `Bearer ${token}`
@@ -72,7 +72,7 @@ function uploadPhoto() {
 function loadUploadedPhotos() {
   const token = localStorage.getItem('token');
   
-  fetch(`${creatorBackend}/photos`, {
+  fetch(`${creatorBackend}/media-items`, {
     headers: {
       'Authorization': `Bearer ${token}`
     }
