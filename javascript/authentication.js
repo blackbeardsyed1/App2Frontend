@@ -1,5 +1,5 @@
 console.log("auth js loaded");
-const backend = "https://scalablesoftwarephotoapp-cbcmh4hcemhsg2bh.francecentral-01.azurewebsites.net/";
+const backend = "https://scalablesoftwarephotoapp-cbcmh4hcemhsg2bh.francecentral-01.azurewebsites.net";
 
 // Global functionss
 window.showSignUp = function() {

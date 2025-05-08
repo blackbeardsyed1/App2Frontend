@@ -1,5 +1,5 @@
 console.log("consumer.js loaded");
-const consumerBackend = "https://scalablesoftwarephotoapp-cbcmh4hcemhsg2bh.francecentral-01.azurewebsites.net/";
+const consumerBackend = "https://scalablesoftwarephotoapp-cbcmh4hcemhsg2bh.francecentral-01.azurewebsites.net";
 let selectedPhoto = null;
 let currentRating = 0;
 

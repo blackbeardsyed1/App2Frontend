@@ -1,5 +1,5 @@
 console.log("creator.js loaded");
-const creatorBackend = "https://scalablesoftwarephotoapp-cbcmh4hcemhsg2bh.francecentral-01.azurewebsites.net/";
+const creatorBackend = "https://scalablesoftwarephotoapp-cbcmh4hcemhsg2bh.francecentral-01.azurewebsites.net";
 
 document.addEventListener('DOMContentLoaded', function() {
   const token = localStorage.getItem('token');
