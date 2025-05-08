@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Sharing App - Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="CSS/authentication.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>📸 Photo Sharing App</h1>
+  </header>
+
+  <div class="container">
+    <!-- Sign-Up Section -->
+    <div id="signUpSection" class="auth-container" autocomplete="off">
+      <div class="auth-box">
+        <h3>Create Your Account</h3>
+        <div class="form-group">
+          <label for="signUpUsername">Username</label>
+          <input type="text" id="signUpUsername" class="form-control" placeholder="Enter username"/>
+        </div>
+        <div class="form-group">
+          <label for="signUpPassword">Password</label>
+          <input type="password" id="signUpPassword" class="form-control" placeholder="Enter password"/>
+        </div>
+        <button id="signUpBtn" class="btn">Sign Up</button>
+        <p class="text-center mt-3">Already have an account? <span class="toggle-auth" id="showLoginBtn">Login</span></p>
+      </div>
+    </div>
+
+    <!-- Login Section -->
+    <div id="loginSection" class="auth-container" style="display:none;" autocomplete="off">
+      <div class="auth-box">
+        <h3>Welcome Back</h3>
+        <div class="form-group">
+          <label for="loginUsername">Username</label>
+          <input type="text" id="loginUsername" class="form-control" placeholder="Enter username"/>
+        </div>
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" class="form-control" placeholder="Enter password"/>
+        </div>
+        <button id="loginBtn" class="btn">Login</button>
+        <p class="text-center mt-3">Don't have an account? <span class="toggle-auth" id="showSignUpBtn">Sign Up</span></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="javascript/authentication.js" defer></script>
+</body>
+</html>
