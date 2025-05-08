@@ -261,7 +261,7 @@ async function searchPhotos() {
     }
 
     const results = await response.json();
-    displayPhotos(results);
+    displayPhotos(results.results);
   } catch (err) {
     console.error("Error searching photos:", err);
     alert("Error searching photos");
