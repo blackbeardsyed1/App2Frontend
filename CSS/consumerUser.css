@@ -1,17 +1,17 @@
 :root {
-  --primary-color: #ff6b81;
-  --secondary-color: #f368e0;
-  --accent-color: #48dbfb;
-  --light-color: #fffafc;
-  --dark-color: #2f3542;
-  --success-color: #1dd1a1;
-  --error-color: #ee5253;
+  --primary-color: #2ecc71;     /* Soft green */
+  --secondary-color: #f1c40f;   /* Bright yellow */
+  --accent-color: #16a085;      /* Teal green */
+  --light-color: #fdfcf7;       /* Light beige */
+  --dark-color: #1e272e;        /* Deep black */
+  --success-color: #27ae60;
+  --error-color: #c0392b;
   --border-color: #dcdde1;
   --font-stack: 'Inter', 'Poppins', sans-serif;
 }
 
 body {
-  background: linear-gradient(145deg, #fff0f5, #f0f9ff);
+  background: linear-gradient(135deg, #f9f5e3, #ecf9f0);
   font-family: var(--font-stack);
   color: var(--dark-color);
   margin: 0;
@@ -229,7 +229,7 @@ body {
 }
 
 .comment {
-  background: #f7f7f7;
+  background: #f9f9f2;
   border-radius: 12px;
   padding: 10px 15px;
   margin-bottom: 12px;

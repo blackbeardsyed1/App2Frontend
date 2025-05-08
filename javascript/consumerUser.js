@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     return;
   }
 const username = getUsernameFromToken(token);
-document.getElementById('user').textContent = `📸 Welcome, ${username}`;
+document.getElementById('user').textContent = `Instagram - ${username}`;
 
   
   setupStarRating();
