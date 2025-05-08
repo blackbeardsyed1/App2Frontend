@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Photo Sharing App - Creator</title>
+  <title>Instagram - Creator</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link href="CSS/creatorUser.css" rel="stylesheet">
 </head>
 <body>
   <header>
-    <h1 id="user">📸 Photo Sharing App - Creator</h1>
+    <h1 id="user">Creator</h1>
     <button class="logout-btn" id="logoutBtn">Logout</button>
   </header>
 
@@ -21,23 +21,33 @@
       
       <div class="upload-form">
         <h4>Upload New Photo</h4>
-        <div class="form-group">
-          <label for="photoFile">Photo</label>
-          <input type="file" id="photoFile" class="form-control"/>
+        <div class="upload-grid">
+          <div class="left-panel">
+            <div class="photo-drop">
+              <label for="photoFile">Select Photo</label>
+              <input type="file" id="photoFile" class="form-control"/>
+            </div>
+          </div>
+          
+          <div class="right-panel">
+            <div class="form-group">
+              <label for="photoTitle">Title</label>
+              <input type="text" id="photoTitle" class="form-control" placeholder="Give your photo a title">
+            </div>
+      
+            <div class="form-group">
+              <label for="photoCaption">Caption</label>
+              <textarea id="photoCaption" class="form-control" placeholder="Tell us more about this photo"></textarea>
+            </div>
+      
+            <div class="form-group">
+              <label for="photoLocation">Location</label>
+              <input type="text" id="photoLocation" class="form-control" placeholder="E.g., Kyoto, Japan">
+            </div>
+      
+            <button id="uploadBtn" class="btn">Upload Photo</button>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="photoTitle">Title</label>
-          <input type="text" id="photoTitle" class="form-control" placeholder="Photo title"/>
-        </div>
-        <div class="form-group">
-          <label for="photoCaption">Caption</label>
-          <textarea id="photoCaption" class="form-control" placeholder="Photo caption" rows="3"></textarea>
-        </div>
-        <div class="form-group">
-          <label for="photoLocation">Location</label>
-          <input type="text" id="photoLocation" class="form-control" placeholder="Where was this taken?"/>
-        </div>
-        <button id="uploadBtn" class="btn">Upload Photo</button>
       </div>
       
       

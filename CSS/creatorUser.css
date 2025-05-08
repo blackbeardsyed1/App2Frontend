@@ -180,3 +180,41 @@ textarea.form-control {
     grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
   }
 }
+.upload-grid {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.left-panel, .right-panel {
+  flex: 1;
+  min-width: 260px;
+}
+
+.photo-drop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9;
+  border: 2px dashed var(--border-color);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  transition: border-color 0.3s ease;
+}
+
+.photo-drop:hover {
+  border-color: var(--accent-color);
+}
+
+.photo-drop label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+
+.photo-drop input[type="file"] {
+  cursor: pointer;
+}
