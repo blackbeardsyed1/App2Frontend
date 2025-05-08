@@ -48,6 +48,13 @@ header h1 {
   min-height: 70vh;
 }
 
+.auth-container {
+  background-color: var(--light-color);
+}
+
+.container {
+  background-color: var(--light-color);
+}
 .auth-box {
   background: white;
   border-radius: 10px;
